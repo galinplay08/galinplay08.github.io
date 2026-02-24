@@ -2,244 +2,336 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Tu Nombre – Proyectos</title>
+  <title>Carlos Galindo Cubero – RF & Antenas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root {
-      --bg: #3b424a;
-      --bg-dark: #2f353c;
-      --text: #f5f5f5;
-      --muted: #c6c6c6;
-      --accent: #ffffff;
-      --max-width: 800px;
-      --radius: 6px;
+    :root{
+      --bg:#3b424a;
+      --bg2:#2f353c;
+      --text:#f5f5f5;
+      --muted:#c6c6c6;
+      --line:#58606a;
+      --max:900px;
+      --r:10px;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+      display:flex;
+      justify-content:center;
     }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      display: flex;
-      justify-content: center;
+    main{width:100%;max-width:var(--max);padding:34px 20px 70px}
+    header{margin-bottom:28px}
+    .title{
+      font-size:clamp(2.2rem,4vw,3.1rem);
+      font-weight:650;
+      letter-spacing:.2px;
+      margin-bottom:8px;
+      text-align:center;
     }
-
-    main {
-      width: 100%;
-      max-width: var(--max-width);
-      padding: 32px 20px 60px;
+    .role{
+      text-align:center;
+      color:var(--muted);
+      font-size:1rem;
+      margin-bottom:16px;
     }
-
-    header {
-      margin-bottom: 32px;
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      color:var(--muted);
+      font-size:.92rem;
+      margin-bottom:18px;
     }
-
-    .title {
-      font-size: clamp(2.2rem, 4vw, 3rem);
-      font-weight: 600;
-      margin-bottom: 8px;
+    .pill{
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:4px 10px;
+      background:rgba(0,0,0,.08);
     }
-
-    .subtitle {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 20px;
+    nav{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin:18px 0 10px;
     }
-
-    nav {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
+    nav a{
+      text-decoration:none;
+      color:var(--text);
+      font-size:.92rem;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
     }
-
-    nav a {
-      font-size: 0.9rem;
-      text-decoration: none;
-      color: var(--text);
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid transparent;
+    nav a:hover{border-color:var(--text)}
+    .icon-row{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      align-items:center;
+      margin:10px 0 18px;
+      flex-wrap:wrap;
     }
-
-    nav a:hover {
-      border-color: var(--accent);
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--muted);
+      text-decoration:none;
+      color:var(--text);
+      font-size:.92rem;
+      background:rgba(0,0,0,.10);
     }
-
-    .icon-row {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 32px;
-      align-items: center;
+    .btn:hover{background:rgba(0,0,0,.16)}
+    .section{
+      margin-top:22px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
     }
-
-    .icon-link {
-      width: 28px;
-      height: 28px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      border: 1px solid var(--muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      color: var(--text);
+    .section h2{
+      font-size:1.15rem;
+      margin-bottom:10px;
+      letter-spacing:.2px;
     }
-
-    .section {
-      margin-bottom: 32px;
-      padding-top: 16px;
-      border-top: 1px solid #555;
+    .lead{color:var(--muted);font-size:.98rem}
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:12px;
     }
-
-    .section h2 {
-      font-size: 1.2rem;
-      margin-bottom: 12px;
+    @media(min-width:820px){
+      .grid.two{grid-template-columns:1fr 1fr}
     }
-
-    .project-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+    .card{
+      background:var(--bg2);
+      border:1px solid rgba(255,255,255,.06);
+      padding:14px 14px;
+      border-radius:var(--r);
     }
-
-    .project-card {
-      background: var(--bg-dark);
-      padding: 12px 14px;
-      border-radius: var(--radius);
+    .card h3{font-size:1rem;margin-bottom:4px}
+    .small{color:var(--muted);font-size:.86rem;margin-bottom:8px}
+    ul{margin-left:18px}
+    li{margin:6px 0;color:var(--text)}
+    li span{color:var(--muted)}
+    .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .tag{
+      font-size:.82rem;
+      color:var(--muted);
+      border:1px solid var(--line);
+      padding:3px 8px;
+      border-radius:999px;
+      background:rgba(0,0,0,.06);
     }
-
-    .project-title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 4px;
+    footer{
+      margin-top:34px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.8rem;
     }
-
-    .project-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .project-desc {
-      font-size: 0.9rem;
-    }
-
-    .about-text {
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .post-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      font-size: 0.95rem;
-    }
-
-    .post-item span {
-      color: var(--muted);
-      font-size: 0.85rem;
-      margin-left: 6px;
-    }
-
-    footer {
-      margin-top: 32px;
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    a.underline:hover {
-      text-decoration: underline;
-    }
+    a{color:inherit}
+    .underline:hover{text-decoration:underline}
   </style>
 </head>
+
 <body>
 <main>
+
   <header>
-    <h1 class="title">Tu Nombre Completo</h1>
-    <p class="subtitle">Bienvenida a mi web personal de proyectos.</p>
+    <h1 class="title">Carlos Galindo Cubero</h1>
+    <p class="role">Ingeniería de Telecomunicaciones · RF / Antenas · High Power Microwave (HPM)</p>
+
+    <div class="meta">
+      <span class="pill">Alcorcón, Madrid</span>
+      <span class="pill">+34 648 53 53 39</span>
+      <span class="pill">galindocubero80@gmail.com</span>
+      <span class="pill">UPM · ETSIT</span>
+    </div>
 
     <div class="icon-row">
-      <!-- Cambia los enlaces por los tuyos -->
-      <a class="icon-link" href="https://www.linkedin.com/in/TU-LINKEDIN" target="_blank" aria-label="LinkedIn">in</a>
-      <a class="icon-link" href="https://github.com/TU-USUARIO" target="_blank" aria-label="GitHub">GH</a>
-      <a class="icon-link" href="mailto:tucorreo@ejemplo.com" aria-label="Email">@</a>
+      <!-- LinkedIn -->
+      <a class="btn" href="https://linkedin.com/in/carlos-galindo-cubero" target="_blank" rel="noopener">
+        LinkedIn
+      </a>
+      <!-- Email -->
+      <a class="btn" href="mailto:galindocubero80@gmail.com">
+        Email
+      </a>
+      <!-- GitHub (pon tu usuario si lo tienes) -->
+      <a class="btn" href="https://github.com/" target="_blank" rel="noopener">
+        GitHub
+      </a>
+      <!-- CV PDF: sube tu PDF al repo con este nombre para que funcione -->
+      <a class="btn" href="Carlos_Galindo_Cubero_CV.pdf" target="_blank" rel="noopener">
+        Descargar CV (PDF)
+      </a>
     </div>
 
     <nav>
+      <a href="#perfil">Perfil</a>
+      <a href="#educacion">Educación</a>
+      <a href="#experiencia">Experiencia</a>
       <a href="#proyectos">Proyectos</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#posts">Posts</a>
+      <a href="#skills">Habilidades</a>
+      <a href="#idiomas">Idiomas</a>
     </nav>
   </header>
 
-  <section id="proyectos" class="section">
-    <h2>Proyectos</h2>
-    <div class="project-list">
-      <!-- EJEMPLOS: cámbialos por los tuyos -->
-      <article class="project-card">
-        <div class="project-title">Antena de doble parche 7/16</div>
-        <div class="project-meta">UPM · 2025 · Microondas / HPM</div>
-        <p class="project-desc">
-          Diseño y simulación de una antena de doble parche con conector 7/16,
-          optimizada para sistemas de microondas de alta potencia.
-        </p>
-      </article>
-
-      <article class="project-card">
-        <div class="project-title">Estado del arte en antenas HPM</div>
-        <div class="project-meta">Informe técnico · 2025</div>
-        <p class="project-desc">
-          Revisión de tecnologías de antenas para sistemas de microondas de alta potencia,
-          incluyendo arquitecturas, materiales y retos de integración.
-        </p>
-      </article>
+  <section id="perfil" class="section">
+    <h2>Perfil</h2>
+    <p class="lead">
+      Estudiante de último curso de Ingeniería de Telecomunicación (especialidad en Sistemas) con enfoque en
+      sistemas RF, antenas y alta potencia. Interesado en el diseño, fabricación e integración de dispositivos en
+      banda microondas y en entornos de validación experimental. Busco desarrollarme en un entorno técnico orientado
+      a soluciones reales de ingeniería.
+    </p>
+    <div class="tagrow">
+      <span class="tag">RF & Microondas</span>
+      <span class="tag">Antenas</span>
+      <span class="tag">HPM</span>
+      <span class="tag">CST Studio Suite</span>
+      <span class="tag">Spark3D</span>
+      <span class="tag">Parámetros S</span>
     </div>
   </section>
 
-  <section id="sobre-mi" class="section">
-    <h2>Sobre mí</h2>
-    <p class="about-text">
-      Soy estudiante de Ingeniería de Telecomunicación (rama sistemas) en la UPM,
-      con interés en microondas, diseño de antenas y aplicaciones de alta potencia.
-      Me gusta trabajar en proyectos prácticos y documentar el proceso para que otras
-      personas puedan aprender de él.
+  <section id="educacion" class="section">
+    <h2>Educación</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Grado en Ingeniería de Tecnologías y Servicios de Telecomunicación</h3>
+        <div class="small">ETSIT · Universidad Politécnica de Madrid (UPM) · Sep 2021 – Actualidad · Finalización prevista: 2026</div>
+        <ul>
+          <li>Especialidad: <span>Sistemas (orientación RF / Antenas)</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia" class="section">
+    <h2>Experiencia</h2>
+
+    <div class="grid two">
+      <div class="card">
+        <h3>Becario de Investigación – Proyecto conjunto UPM–Indra (HPM)</h3>
+        <div class="small">Jul 2025 – Actualidad</div>
+        <ul>
+          <li>Diseño y simulación de un demostrador de antena para un sistema <span>High Power Microwave (HPM)</span>.</li>
+          <li>Modelado electromagnético con <span>CST Studio Suite</span> (parámetros S, adaptación y comportamiento EM).</li>
+          <li>Análisis de potencia máxima admisible y ruptura por corona usando <span>Spark3D</span>.</li>
+          <li>Optimización del prototipo (geometría / condiciones de operación) para mejorar robustez en alta potencia.</li>
+        </ul>
+        <div class="tagrow">
+          <span class="tag">CST</span><span class="tag">Spark3D</span><span class="tag">HPM</span><span class="tag">Matching</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Supermercados Sánchez Romero</h3>
+        <div class="small">2022 – 2024 · Cajero y atención al cliente</div>
+        <ul>
+          <li>Atención al cliente y operación diaria en entorno con alta carga de trabajo.</li>
+          <li>Desarrollo de comunicación, responsabilidad y trabajo en equipo.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos" class="section">
+    <h2>Proyectos relevantes</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>TFG: Diseño de antenas para aplicaciones High-Power Microwave (HPM)</h3>
+        <div class="small">Sep 2025 – Jul 2026</div>
+        <ul>
+          <li>Diseño y análisis de antenas para sistemas HPM orientados a aplicaciones de <span>guerra electrónica</span>.</li>
+          <li>Estudio de <span>ancho de banda</span>, <span>ganancia</span> y <span>diagrama de radiación</span> en antenas microstrip en <span>Banda X</span>.</li>
+          <li>Evaluación de ruptura dieléctrica, descargas superficiales y concentraciones de campo en alta potencia.</li>
+          <li>Determinación de potencia máxima admisible mediante distribución de campo eléctrico y simulación EM.</li>
+          <li>Optimización geométrica (bordes, esquinas, separaciones y alimentación) para reducir máximos de campo.</li>
+          <li>Comparativa con tipologías de banda ancha: <span>dipolos</span> y <span>Vivaldi</span>.</li>
+        </ul>
+        <div class="tagrow">
+          <span class="tag">X-Band</span><span class="tag">Microstrip</span><span class="tag">Breakdown</span><span class="tag">Banda ancha</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="lead" style="margin-top:10px">
+      Tip: si quieres, cada proyecto puede tener su propia página (con imágenes, resultados y enlaces a PDF/GitHub).
     </p>
   </section>
 
-  <section id="posts" class="section">
-    <h2>Posts / Bitácora</h2>
-    <ul class="post-list">
-      <li class="post-item">
-        <a href="#" class="underline">Primer prototipo de antena: problemas y aprendizajes</a>
-        <span>enero 2025</span>
-      </li>
-      <li class="post-item">
-        <a href="#" class="underline">Notas rápidas sobre simulación EM en HFSS</a>
-        <span>diciembre 2024</span>
-      </li>
-    </ul>
-    <p style="margin-top:10px;font-size:0.85rem;color:var(--muted);">
-      Más adelante puedes enlazar cada post a un archivo HTML o Markdown independiente.
-    </p>
+  <section id="skills" class="section">
+    <h2>Habilidades</h2>
+
+    <div class="grid two">
+      <div class="card">
+        <h3>RF / Electromagnetismo</h3>
+        <ul>
+          <li>CST Studio Suite</li>
+          <li>Spark3D</li>
+          <li>Parámetros S · adaptación · matching</li>
+          <li>Análisis en alta potencia (corona / breakdown)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Programación</h3>
+        <ul>
+          <li>MATLAB</li>
+          <li>HTML</li>
+          <li>C++</li>
+          <li>Java</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Soft skills</h3>
+        <ul>
+          <li>Trabajo en equipo multidisciplinar</li>
+          <li>Pensamiento crítico</li>
+          <li>Orientación a resultados</li>
+          <li>Autonomía técnica</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Otros</h3>
+        <ul>
+          <li>Permiso de conducir B</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="idiomas" class="section">
+    <h2>Idiomas</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Inglés</h3>
+        <div class="small">B2 · Certificado Oxford</div>
+      </div>
+    </div>
   </section>
 
   <footer>
-    © 2025 Tu Nombre · Gracias por tu visita.
+    © <span id="y"></span> Carlos Galindo Cubero · Gracias por tu visita.
   </footer>
+
 </main>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
