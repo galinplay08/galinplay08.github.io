@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tu Nombre – Proyectos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #3b424a;
+      --bg-dark: #2f353c;
+      --text: #f5f5f5;
+      --muted: #c6c6c6;
+      --accent: #ffffff;
+      --max-width: 800px;
+      --radius: 6px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+    }
+
+    main {
+      width: 100%;
+      max-width: var(--max-width);
+      padding: 32px 20px 60px;
+    }
+
+    header {
+      margin-bottom: 32px;
+    }
+
+    .title {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: var(--text);
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+
+    nav a:hover {
+      border-color: var(--accent);
+    }
+
+    .icon-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 32px;
+      align-items: center;
+    }
+
+    .icon-link {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .section {
+      margin-bottom: 32px;
+      padding-top: 16px;
+      border-top: 1px solid #555;
+    }
+
+    .section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .project-card {
+      background: var(--bg-dark);
+      padding: 12px 14px;
+      border-radius: var(--radius);
+    }
+
+    .project-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .project-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .post-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.95rem;
+    }
+
+    .post-item span {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-left: 6px;
+    }
+
+    footer {
+      margin-top: 32px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a.underline:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1 class="title">Tu Nombre Completo</h1>
+    <p class="subtitle">Bienvenida a mi web personal de proyectos.</p>
+
+    <div class="icon-row">
+      <!-- Cambia los enlaces por los tuyos -->
+      <a class="icon-link" href="https://www.linkedin.com/in/TU-LINKEDIN" target="_blank" aria-label="LinkedIn">in</a>
+      <a class="icon-link" href="https://github.com/TU-USUARIO" target="_blank" aria-label="GitHub">GH</a>
+      <a class="icon-link" href="mailto:tucorreo@ejemplo.com" aria-label="Email">@</a>
+    </div>
+
+    <nav>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#posts">Posts</a>
+    </nav>
+  </header>
+
+  <section id="proyectos" class="section">
+    <h2>Proyectos</h2>
+    <div class="project-list">
+      <!-- EJEMPLOS: cámbialos por los tuyos -->
+      <article class="project-card">
+        <div class="project-title">Antena de doble parche 7/16</div>
+        <div class="project-meta">UPM · 2025 · Microondas / HPM</div>
+        <p class="project-desc">
+          Diseño y simulación de una antena de doble parche con conector 7/16,
+          optimizada para sistemas de microondas de alta potencia.
+        </p>
+      </article>
+
+      <article class="project-card">
+        <div class="project-title">Estado del arte en antenas HPM</div>
+        <div class="project-meta">Informe técnico · 2025</div>
+        <p class="project-desc">
+          Revisión de tecnologías de antenas para sistemas de microondas de alta potencia,
+          incluyendo arquitecturas, materiales y retos de integración.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="sobre-mi" class="section">
+    <h2>Sobre mí</h2>
+    <p class="about-text">
+      Soy estudiante de Ingeniería de Telecomunicación (rama sistemas) en la UPM,
+      con interés en microondas, diseño de antenas y aplicaciones de alta potencia.
+      Me gusta trabajar en proyectos prácticos y documentar el proceso para que otras
+      personas puedan aprender de él.
+    </p>
+  </section>
+
+  <section id="posts" class="section">
+    <h2>Posts / Bitácora</h2>
+    <ul class="post-list">
+      <li class="post-item">
+        <a href="#" class="underline">Primer prototipo de antena: problemas y aprendizajes</a>
+        <span>enero 2025</span>
+      </li>
+      <li class="post-item">
+        <a href="#" class="underline">Notas rápidas sobre simulación EM en HFSS</a>
+        <span>diciembre 2024</span>
+      </li>
+    </ul>
+    <p style="margin-top:10px;font-size:0.85rem;color:var(--muted);">
+      Más adelante puedes enlazar cada post a un archivo HTML o Markdown independiente.
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Tu Nombre · Gracias por tu visita.
+  </footer>
+</main>
+</body>
+</html>
